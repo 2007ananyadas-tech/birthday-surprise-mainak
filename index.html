@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17151d">
+<title>For Mr Intelligent ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #17151d;
+  --surface: #211d27;
+  --surface2: #2b2430;
+  --gold: #d6b98c;
+  --rose: #e8c9c2;
+  --mauve: #b9a6c8;
+  --ivory: #f4eee7;
+  --muted: #b8aeb9;
+  --line: #d6b98c38;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 15%, #8d6c8c22, transparent 38%),
+    radial-gradient(ellipse at 85% 75%, #d6b98c12, transparent 40%),
+    var(--bg);
+  color: var(--ivory);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button { font: inherit; }
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: var(--gold);
+  opacity: .55;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: .8; transform: scale(1.2); }
+}
+
+.scene {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 20px 85px;
+  position: relative;
+  z-index: 1;
+}
+
+.scene.active {
+  display: flex;
+  animation: enter .75s ease both;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: min(760px, 100%);
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(44px, 8vw, 76px);
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.gold-text { color: var(--gold); }
+.rose-text { color: var(--rose); }
+
+.italic { font-style: italic; }
+
+.rule {
+  width: 65px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 25px auto;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border: 1px solid #e3c99d;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #e5cfaa, #c6a879);
+  color: #211b20;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow: 0 8px 30px #d6b98c20;
+  transition: .3s;
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 38px #d6b98c42;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 12px 22px;
+  margin: 7px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.secondary:hover {
+  background: #d6b98c16;
+  border-color: var(--gold);
+}
+
+.small-note {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+/* Progress */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff0b;
+  z-index: 20;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width .5s;
+}
+
+/* Welcome */
+
+.welcome-card {
+  padding: clamp(35px, 7vw, 75px) 25px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    linear-gradient(145deg, #ffffff08, transparent 65%),
+    var(--surface);
+  box-shadow: 0 30px 100px #0005;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #d6b98c22;
+  border-radius: 50%;
+  top: -145px;
+  right: -90px;
+  box-shadow: 0 0 0 25px #d6b98c08, 0 0 0 50px #d6b98c05;
+}
+
+.welcome-symbol {
+  font-size: 42px;
+  color: var(--gold);
+  margin-bottom: 25px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.welcome-card h1 { margin-bottom: 22px; }
+
+.welcome-card p {
+  max-width: 460px;
+  margin: auto;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+/* Envelope */
+
+.envelope-area {
+  margin: 55px auto 25px;
+  width: 220px;
+  height: 155px;
+  position: relative;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.envelope {
+  position: absolute;
+  inset: 0;
+  background: #b99aa9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px #0005;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #d7b9c3;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  z-index: 3;
+  transform-origin: top;
+  transition: transform .7s;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #a98a9c;
+  clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+  z-index: 2;
+}
+
+.envelope-letter {
+  position: absolute;
+  width: 85%;
+  height: 115px;
+  left: 7.5%;
+  top: 15px;
+  background: var(--ivory);
+  color: #473643;
+  padding: 20px 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  z-index: 1;
+  transition: .8s;
+}
+
+.envelope.sealed::before {
+  transform: rotateX(180deg);
+}
+
+.envelope.sealed .envelope-letter {
+  transform: translateY(-85px);
+  z-index: 4;
+}
+
+.seal {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #44333b;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  transition: .5s;
+}
+
+.envelope.sealed .seal { opacity: 0; }
+
+.letter-card {
+  background: linear-gradient(140deg, #f6eee8, #e9dce8);
+  color: #463846;
+  padding: clamp(25px, 6vw, 48px);
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 22px 65px #0005;
+  margin: 30px auto;
+  max-width: 650px;
+  animation: enter .6s ease;
+}
+
+.letter-card h3 {
+  color: #80637e;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.letter-card p {
+  color: #5e4d5d;
+  margin: 14px 0;
+  line-height: 2;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #956e86 !important;
+  margin-top: 25px !important;
+}
+
+.bengali { font-family: 'Noto Serif Bengali', serif; }
+
+/* Memories */
+
+.memory-frame {
+  max-width: 450px;
+  width: 100%;
+  margin: 32px auto 0;
+  padding: 13px 13px 22px;
+  background: #f3eae5;
+  color: #493a46;
+  box-shadow: 0 25px 65px #0007;
+  transform: rotate(-1deg);
+  transition: .4s;
+}
+
+.memory-frame:hover { transform: rotate(0) scale(1.015); }
+
+.memory-frame img {
+  display: block;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  background: #d9cbd8;
+  transition: opacity .25s;
+}
+
+.memory-caption {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  padding: 18px 5px 0;
+}
+
+.memory-count {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 25px;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.arrow-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  background: #ffffff08;
+  cursor: pointer;
+  font-size: 19px;
+  transition: .3s;
+}
+
+.arrow-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 50%;
+  background: #8b7d8d;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.5);
+}
+
+/* Mystery gifts */
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 570px;
+  margin: 45px auto 25px;
+}
+
+.mystery-gift {
+  min-height: 155px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff0b, #ffffff02);
+  color: var(--ivory);
+  cursor: pointer;
+  padding: 15px 8px;
+  transition: .35s;
+}
+
+.mystery-gift:hover {
+  transform: translateY(-9px);
+  border-color: var(--gold);
+  background: #d6b98c12;
+}
+
+.gift-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.gift-label {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.surprise-message {
+  display: none;
+  max-width: 550px;
+  padding: 24px;
+  margin: 20px auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  animation: enter .5s ease;
+}
+
+.surprise-message.show { display: block; }
+
+.surprise-message h3 {
+  color: var(--rose);
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+/* Birthday cake */
+
+.cake {
+  font-size: 100px;
+  margin: 30px 0 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.candle-note {
+  display: inline-block;
+  padding: 9px 15px;
+  color: var(--gold);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+/* Finale */
+
+.final-card {
+  padding: clamp(35px, 7vw, 65px) 22px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top, #d6b98c12, transparent 55%),
+    var(--surface);
+  box-shadow: 0 25px 80px #0006;
+}
+
+.final-card h1 { color: var(--gold); }
+
+.final-card .final-message {
+  color: var(--rose);
+  margin-top: 22px;
+}
+
+/* Confetti */
+
+.confetti {
+  position: fixed;
+  top: -25px;
+  z-index: 30;
+  pointer-events: none;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(650deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  color: #887e8d;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+[hidden] { display: none !important; }
+
+@media(max-width: 560px) {
+  .scene { padding: 35px 16px 65px; }
+  .memory-frame img { height: 290px; }
+  .gift-grid { gap: 9px; }
+  .mystery-gift { min-height: 130px; }
+  .gift-icon { font-size: 38px; }
+  .welcome-card { padding: 45px 18px; }
+  .envelope-area { transform: scale(.9); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div class="progress"><span id="progressBar"></span></div>
+
+<!-- SCENE 1 -->
+<section class="scene active" id="scene1">
+  <div class="container welcome-card">
+    <div class="welcome-symbol">✧</div>
+    <div class="eyebrow">A PRIVATE LITTLE CELEBRATION</div>
+    <h1>Hey,<br><span class="gold-text italic">Mr Intelligent.</span></h1>
+    <div class="rule"></div>
+    <p>
+      I made something a little different for you.
+      Six memories, a few little surprises,
+      and a whole lot of wishes.
+    </p>
+    <button class="primary" onclick="goTo(2)">
+      Enter your little world <span>✧</span>
+    </button>
+    <div class="small-note">MADE ESPECIALLY FOR YOU ♡</div>
+  </div>
+</section>
+
+<!-- SCENE 2 -->
+<section class="scene" id="scene2">
+  <div class="container">
+    <div class="eyebrow">A MESSAGE, SEALED WITH LOVE</div>
+    <h2>Something is waiting<br><span class="gold-text italic">inside...</span></h2>
+    <p>Tap the envelope to open your little surprise.</p>
+
+    <div class="envelope-area" onclick="openEnvelope()">
+      <div class="envelope" id="envelope">
+        <div class="envelope-letter">For Mr Intelligent ♡</div>
+        <div class="seal">♡</div>
+      </div>
+    </div>
+
+    <p id="envelopeHint" class="small-note">TAP TO UNSEAL YOUR LETTER</p>
+
+    <button class="primary" id="letterContinue" hidden onclick="goTo(3)">
+      Read your letter →
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 3 -->
+<section class="scene" id="scene3">
+  <div class="container">
+    <div class="eyebrow">WORDS THAT TRAVEL ANY DISTANCE</div>
+    <h2>A letter <span class="gold-text italic">for you ♡</span></h2>
+    <p>Some feelings are better written than spoken.</p>
+
+    <div>
+      <button class="secondary" onclick="showLetter('en')">English</button>
+      <button class="secondary" onclick="showLetter('bn')">বাংলা</button>
+    </div>
+
+    <div class="letter-card" id="englishLetter">
+      <h3>Dear Mr Intelligent,</h3>
+      <p>Happy Birthday! ❤️</p>
+      <p>
+        Today is all about you. I wish I could make
+        this day as beautiful as the happiness you
+        bring into the little moments we share.
+      </p>
+      <p>
+        Thank you for the conversations, the laughter,
+        the memories and all those little things that
+        make you so special.
+      </p>
+      <p>
+        Even when miles separate us, I hope you always
+        remember that someone is cheering for you,
+        believing in you and wishing the very best
+        for your future.
+      </p>
+      <p>
+        May this year bring you success, peace,
+        good health and everything your heart wishes for.
+      </p>
+      <p>
+        I hope this little world makes you smile today.
+      </p>
+      <p class="signature">With lots of love ♡</p>
+    </div>
+
+    <div class="letter-card bengali" id="bengaliLetter" hidden>
+      <h3>আমার প্রিয় Mr Intelligent,</h3>
+      <p>শুভ জন্মদিন! ❤️</p>
+      <p>
+        আজকের দিনটা সম্পূর্ণ তোমার। তোমার জীবনের
+        এই বিশেষ দিনে তোমাকে একটু অন্যরকম আনন্দ
+        দেওয়ার ছোট্ট একটা চেষ্টা করলাম।
+      </p>
+      <p>
+        আমাদের ছোট ছোট কথা, হাসি, স্মৃতি আর
+        সুন্দর মুহূর্তগুলো আমার কাছে ভীষণ মূল্যবান।
+      </p>
+      <p>
+        দূরত্ব যতই থাকুক, তোমার জন্য আমার
+        শুভকামনা সবসময় থাকবে। তোমার প্রতিটি
+        স্বপ্ন পূরণ হোক, জীবনে অনেক সাফল্য আসুক।
+      </p>
+      <p>
+        নতুন বছরটা তোমার জন্য নিয়ে আসুক
+        অনেক আনন্দ, শান্তি আর সুন্দর সব মুহূর্ত।
+      </p>
+      <p>আশা করি আমার এই ছোট্ট surprise-টা তোমার মুখে হাসি এনে দেবে।</p>
+      <p class="signature">অনেক অনেক ভালোবাসা ♡</p>
+    </div>
+
+    <button class="primary" onclick="goTo(4)">
+      Turn the next page →
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 4 -->
+<section class="scene" id="scene4">
+  <div class="container">
+    <div class="eyebrow">SIX MOMENTS, ONE LITTLE STORY</div>
+    <h2>Our memory <span class="gold-text italic">lane ♡</span></h2>
+    <p>Every picture has a little story of its own.</p>
+
+    <div class="memory-frame">
+      <img id="memoryImage" src="Images/Photo1.jpeg" alt="A special memory">
+      <div class="memory-caption" id="memoryCaption">A moment to remember ♡</div>
+    </div>
+
+    <div class="memory-count" id="memoryCount">MEMORY 01 / 06</div>
+
+    <div class="dots" id="memoryDots"></div>
+
+    <div class="gallery-controls">
+      <button class="arrow-btn" onclick="changeMemory(-1)" aria-label="Previous photo">←</button>
+      <button class="secondary" onclick="changeMemory(1)">Next memory →</button>
+      <button class="arrow-btn" onclick="changeMemory(1)" aria-label="Next photo">→</button>
+    </div>
+
+    <button class="primary" onclick="goTo(5)">
+      Discover another surprise ✧
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 5 -->
+<section class="scene" id="scene5">
+  <div class="container">
+    <div class="eyebrow">A LITTLE GAME FOR THE BIRTHDAY BOY</div>
+    <h2>Pick your <span class="gold-text italic">surprise.</span></h2>
+    <p>Three little gifts. Choose each one to reveal its secret.</p>
+
+    <div class="gift-grid">
+      <button class="mystery-gift" onclick="openMystery(0)">
+        <span class="gift-icon">🎁</span>
+        <span class="gift-label">GIFT NO. 01</span>
+      </button>
+      <button class="mystery-gift" onclick="openMystery(1)">
+        <span class="gift-icon">🎀</span>
+        <span class="gift-label">GIFT NO. 02</span>
+      </button>
+      <button class="mystery-gift" onclick="openMystery(2)">
+        <span class="gift-icon">💝</span>
+        <span class="gift-label">GIFT NO. 03</span>
+      </button>
+    </div>
+
+    <div class="surprise-message" id="surpriseMessage" aria-live="polite">
+      <h3 id="surpriseTitle"></h3>
+      <p id="surpriseText"></p>
+    </div>
+
+    <p class="small-note" id="giftStatus">OPEN ALL THREE LITTLE GIFTS</p>
+
+    <button class="primary" id="giftContinue" hidden onclick="goTo(6)">
+      One last surprise awaits →
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 6 -->
+<section class="scene" id="scene6">
+  <div class="container">
+    <div class="eyebrow">MAKE A WISH, IT'S YOUR DAY</div>
+    <h2>A little birthday <span class="gold-text italic">magic.</span></h2>
+
+    <div class="cake" id="cake">🎂</div>
+
+    <p id="candleText">
+      Close your eyes, make a wish and tap the button.
+    </p>
+
+    <div class="candle-note" id="candleNote">YOUR WISH IS YOUR SECRET ♡</div>
+
+    <br>
+
+    <button class="primary" id="blowButton" onclick="blowCandles()">
+      Blow the candles ✨
+    </button>
+
+    <br>
+
+    <button class="secondary" id="finalButton" hidden onclick="goTo(7)">
+      See your grand finale →
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 7 -->
+<section class="scene" id="scene7">
+  <div class="container final-card">
+    <div class="eyebrow">TODAY, WE CELEBRATE YOU</div>
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday,<br><span class="italic">Mr Intelligent!</span></h1>
+    <div class="rule"></div>
+    <p>
+      Different places, countless miles,
+      but a little celebration made just for you.
+    </p>
+    <p class="final-message">
+      May your days be filled with happiness,
+      your dreams find their way to you,
+      and your smile never run out of reasons. ♡
+    </p>
+
+    <button class="primary" onclick="celebrate()">
+      Let's celebrate! ✨
+    </button>
+
+    <p class="small-note">A LITTLE WORLD MADE JUST FOR YOU ♡</p>
+  </div>
+</section>
+
+<footer>
+  A LITTLE WORLD OF US ♡<br><br>
+  DESIGNED & DEVELOPED WITH LOVE
+</footer>
+
+<script>
+/* ==================================
+   YOUR SIX PHOTOS AND CAPTIONS
+================================== */
+
+const memories = [
+  {
+    image: "Images/Photo1.jpeg",
+    caption: "His Childhood Memory ♡"
+  },
+  {
+    image: "Images/Photo2.jpeg",
+    caption: "He is in Winter"
+  },
+  {
+    image: "Images/Photo3.jpeg",
+    caption: "He is in Black Shirt"
+  },
+  {
+    image: "Images/Photo4.jpeg",
+    caption: "His Official Mood ✨"
+  },
+  {
+    image: "Images/Photo5.png",
+    caption: "Handsome Man ♡"
+  },
+  {
+    image: "Images/Photo6.png",
+    caption: "Our Little Story ♡"
+  }
+];
+
+let currentMemory = 0;
+let openedGifts = new Set();
+let candlesBlown = false;
+
+/* Background stars */
+
+function createStars() {
+  const container = document.getElementById("stars");
+
+  for (let i = 0; i < 45; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.textContent = Math.random() > .5 ? "✦" : "·";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.fontSize = (8 + Math.random() * 13) + "px";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    container.appendChild(star);
+  }
+}
+
+/* Navigation */
+
+function goTo(number) {
+  document.querySelectorAll(".scene").forEach(scene => {
+    scene.classList.remove("active");
+  });
+
+  document.getElementById("scene" + number).classList.add("active");
+
+  document.getElementById("progressBar").style.width =
+    ((number - 1) / 6 * 100) + "%";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (number === 7) confetti(65);
+}
+
+/* Envelope */
+
+function openEnvelope() {
+  const envelope = document.getElementById("envelope");
+
+  if (envelope.classList.contains("sealed")) return;
+
+  envelope.classList.add("sealed");
+
+  document.getElementById("envelopeHint").textContent =
+    "YOUR LETTER IS READY ♡";
+
+  document.getElementById("letterContinue").hidden = false;
+
+  confetti(15);
+}
+
+/* Letter language */
+
+function showLetter(language) {
+  document.getElementById("englishLetter").hidden = language !== "en";
+  document.getElementById("bengaliLetter").hidden = language !== "bn";
+}
+
+/* Gallery */
+
+function renderDots() {
+  const container = document.getElementById("memoryDots");
+  container.innerHTML = "";
+
+  memories.forEach((memory, index) => {
+    const dot = document.createElement("button");
+    dot.className = "dot" + (index === currentMemory ? " active" : "");
+    dot.setAttribute("aria-label", "Show photo " + (index + 1));
+    dot.onclick = () => showMemory(index);
+    container.appendChild(dot);
+  });
+}
+
+function showMemory(index) {
+  currentMemory = (index + memories.length) % memories.length;
+
+  const img = document.getElementById("memoryImage");
+  img.style.opacity = "0";
+
+  const nextImage = new Image();
+
+  nextImage.onload = () => {
+    img.src = nextImage.src;
+    img.style.opacity = "1";
+  };
+
+  nextImage.onerror = () => {
+    img.style.opacity = "1";
+    alert("Could not load " + memories[currentMemory].image +
+      ". Please check the image name and folder.");
+  };
+
+  nextImage.src = memories[currentMemory].image;
+
+  document.getElementById("memoryCaption").textContent =
+    memories[currentMemory].caption;
+
+  document.getElementById("memoryCount").textContent =
+    "MEMORY 0" + (currentMemory + 1) + " / 06";
+
+  renderDots();
+}
+
+function changeMemory(direction) {
+  showMemory(currentMemory + direction);
+}
+
+/* Mystery gifts */
+
+const gifts = [
+  {
+    title: "A Wish for You ✨",
+    text: "May you always find courage to chase your dreams and the happiness to enjoy every little victory."
+  },
+  {
+    title: "A Little Reminder ♡",
+    text: "No matter how busy life gets, remember that you deserve beautiful moments, peaceful days and endless reasons to smile."
+  },
+  {
+    title: "Your Special Surprise 💝",
+    text: "This whole little website is your birthday gift — made with care, memories and a lot of thought."
+  }
+];
+
+function openMystery(index) {
+  if (openedGifts.has(index)) {
+    return;
+  }
+
+  openedGifts.add(index);
+
+  const message = gifts[index];
+
+  document.getElementById("surpriseTitle").textContent = message.title;
+  document.getElementById("surpriseText").textContent = message.text;
+  document.getElementById("surpriseMessage").classList.add("show");
+
+  const buttons = document.querySelectorAll(".mystery-gift");
+  buttons[index].style.opacity = ".55";
+  buttons[index].style.borderColor = "#d6b98c";
+  buttons[index].querySelector(".gift-icon").textContent = "✨";
+
+  document.getElementById("giftStatus").textContent =
+    openedGifts.size + " OF 3 GIFTS OPENED";
+
+  if (openedGifts.size === 3) {
+    document.getElementById("giftContinue").hidden = false;
+    document.getElementById("giftStatus").textContent =
+      "ALL YOUR LITTLE SURPRISES ARE OPENED ♡";
+    confetti(20);
+  }
+}
+
+/* Birthday candles */
+
+function blowCandles() {
+  if (candlesBlown) return;
+
+  candlesBlown = true;
+
+  document.getElementById("cake").textContent = "🍰";
+  document.getElementById("candleText").textContent =
+    "Wish made! May it find its way to you. ♡";
+
+  document.getElementById("candleNote").textContent =
+    "A LITTLE MAGIC JUST FOR YOU ✨";
+
+  document.getElementById("blowButton").hidden = true;
+  document.getElementById("finalButton").hidden = false;
+
+  confetti(35);
+}
+
+/* Confetti */
+
+function confetti(amount = 35) {
+  const symbols = ["✦", "♡", "✧", "✨", "•"];
+  const colours = ["#d6b98c", "#e8c9c2", "#b9a6c8", "#f4eee7"];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement("span");
+
+    piece.className = "confetti";
+    piece.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.color =
+      colours[Math.floor(Math.random() * colours.length)];
+
+    piece.style.fontSize = (12 + Math.random() * 17) + "px";
+    piece.style.animationDuration = (2.5 + Math.random() * 2) + "s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(() => piece.remove(), 5000);
+  }
+}
+
+function celebrate() {
+  confetti(100);
+}
+
+/* Start */
+
+createStars();
+renderDots();
+</script>
+
+</body>
+</html>
+ 
